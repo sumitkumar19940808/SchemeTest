@@ -9,11 +9,11 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 public class FourtuneFourScheme {
-  WebDriver driver;
-	String url="http://172.20.5.18/userroopesh/FortuneDoc/prizescheme.php3?lotcode=S501";
+    WebDriver driver;
+	String url="http://172.20.5.18/userroopesh/FortuneDoc/prizescheme.php3?lotcode=R301";
 	String expectedGovtName = "GOVERNMENT OF SIKKIM";
 	String expectedGameNameScheme = "FORTUNE FOUR ONLINE WEEKLY LOTTERY";
-	String expectedDrawDateStarted = ": 09.07.2018 Onwards";
+	String expectedDrawDateStarted = ": 16.07.2018   Onwards";
 	String expecteddrawNumber =": 1 onwards";
 	String expectedTicketPrize =": Rs.5.00 (per ticket / selection)";
 	String expectedfrequencyOfDraw =": Weekly";
@@ -54,9 +54,9 @@ public void checkGameNameScheme() {
 @Test(priority=3)
 public void dateOfDrawStarted() {
 	  String expecteddrawDateText = "Date of Draw";
-	  String actualdrawDateText = driver.findElement(By.cssSelector("body > table:nth-child(6) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > b:nth-child(1)")).getText();
+	  String actualdrawDateText = driver.findElement(By.cssSelector("body > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(3) > td:nth-child(1) > font:nth-child(1)")).getText();
 	  sa.assertEquals(actualdrawDateText, expecteddrawDateText);
-	  String actualDrawDateStarted = driver.findElement(By.cssSelector("body > table:nth-child(6) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2)")).getText();
+	  String actualDrawDateStarted = driver.findElement(By.cssSelector("body > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(3) > td:nth-child(2) > font:nth-child(1)")).getText();
 	  sa.assertEquals(actualDrawDateStarted, expectedDrawDateStarted);
 	  sa.assertAll();
 }
